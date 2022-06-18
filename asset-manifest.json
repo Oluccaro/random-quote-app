@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/random-quote-app/static/css/main.a87b5368.css",
-    "main.js": "/random-quote-app/static/js/main.4be9a319.js",
+    "main.css": "/random-quote-app/static/css/main.72a0b641.css",
+    "main.js": "/random-quote-app/static/js/main.f596b1ce.js",
+    "static/media/icons8-twitter.gif": "/random-quote-app/static/media/icons8-twitter.df8c24446c8893426e3e.gif",
+    "static/media/twitter-logo.svg": "/random-quote-app/static/media/twitter-logo.1e7c4f1f751c7f0891b2daf96e6af2c6.svg",
+    "static/media/list-icon.svg": "/random-quote-app/static/media/list-icon.51bf988941d4ae8c1e93fd2eb68190b3.svg",
+    "static/media/heart-icon.svg": "/random-quote-app/static/media/heart-icon.de70e8ece0ebf909b3f1d1b26474f00a.svg",
     "index.html": "/random-quote-app/index.html",
-    "main.a87b5368.css.map": "/random-quote-app/static/css/main.a87b5368.css.map",
-    "main.4be9a319.js.map": "/random-quote-app/static/js/main.4be9a319.js.map"
+    "main.72a0b641.css.map": "/random-quote-app/static/css/main.72a0b641.css.map",
+    "main.f596b1ce.js.map": "/random-quote-app/static/js/main.f596b1ce.js.map"
   },
   "entrypoints": [
-    "static/css/main.a87b5368.css",
-    "static/js/main.4be9a319.js"
+    "static/css/main.72a0b641.css",
+    "static/js/main.f596b1ce.js"
   ]
 }
