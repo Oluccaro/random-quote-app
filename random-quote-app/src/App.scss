@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+* {
+  font-family: Lato, sans-serif;
+  box-sizing: border-box;
+}
+
+//defining some variables;
+$white: #fffcf9; //babypower white//
+$black: rgba(51, 51, 51, 1);
+$new-quote-color: #7A23FF;
+$display-color: $white;
+$background-color: #333;
+$box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8),
+0 1px 2px rgba(0, 0, 0, 0.24);
+$box-shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$border-radius: 5px;
+$transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+$blue-twitter: #B1EDE8;
+$american-blue: #6d435a;
+$american-white: rgba(255,255,255,1);
+$american-red:  #FF6978;
+$brazil-green: rgba(0, 156, 59,1);
+$brazil-yellow: rgba(255, 223, 1);
+$brazil-blue: rgba(0, 39, 118,1);
+//_______________________
+html{
+  background: $background-color;
+  height: 100%;
+  scroll-behavior:smooth;
+}
+body{
+  background-color: inherit;
+  height:100%;
+}
+#left-quote{
+color:$background-color;
+  padding-right:15px;
+}
+#root{
+  height: 1vh;
+}
+#signature{
+  display: flex;
+  position: relative;
+  text-align: center;
+  width: 200px;
+  margin: 50px auto;
+  color: $black;
+  background-color:$white;
+  border-radius: 5px;
+  box-shadow:$box-shadow;
+}
+#sig{
+  padding: 5px;
+}
+#quote-box {
+  position: relative;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  flex-flow: column;
+  justify-content: center;
+  vertical-align: middle;
+  margin: 10% 20%;
+}
+#quote-display{
+  background:$white;
+  padding:20px;
+  margin-bottom:20px;
+  border-radius:$border-radius;
+  box-shadow:$box-shadow;
+}
+#buttons-wrapper{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @media screen and (max-width: 720px){
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+}
+
+
+button{
+  padding:0px;
+  transition:$transition;
+  cursor:pointer;
+  
+}
+#new-quote {
+    font-weight:400px;
+    font-size:15px;
+    padding:15px;
+    color:$white;
+    background: $new-quote-color;
+    border:none;
+    border-radius:$border-radius;
+text-shadow: 1px 1px 0px $black,2px 2px 0px $black;
+  &:hover{
+    box-shadow:$box-shadow-hover;
+    margin-right: 10px;
+  }
+}
+
+@keyframes pulse-twitter {
+  0% { box-shadow: 0 0 0 0 $blue-twitter; }
+}
+@keyframes pulse-heart {
+  0% { box-shadow: 0 0 0 0 $american-red; }
+}
+
+#tweet-quote{
+  background: $blue-twitter;
+  border-radius:$border-radius;
+  transition:$transition;
+  cursor:pointer;
+  &:hover, :focus{
+    box-shadow:0 0 0 2em rgba(#fff,0);
+    animation: pulse-twitter 1s;
+  }
+  padding:4px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+//favorite button customize
+#favorite-button{
+  border: none;
+  background: $american-red;
+  border-radius:$border-radius;
+  transition:$transition;
+  cursor:pointer;
+  &:hover, :focus{
+    box-shadow:0 0 0 2em rgba(#fff,0);
+    animation: pulse-heart 1s;
+  }
+  padding: 4px;
+}
+#show-modal{
+  border: none;
+  background: $american-blue;
+  border-radius:$border-radius;
+  transition:$transition;
+  cursor:pointer;
+  &:hover, :focus{
+    box-shadow:$box-shadow-hover;
+  }
+  padding: 4px;
+}
+
+#twitter-icon{
+  color: $white;
+  padding:10px;
+}
+#favorite-icon{
+  color:$white;
+  padding:10px;
+}
+#modal-icon{
+  color: $white;
+  padding:10px;
+}
+//toggle button
+.switch {
+  margin: auto 4px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  //background: linear-gradient(90deg, $american-white 0%, $american-blue 20%, $american-red 100%);
+  background: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: $black;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  //background: linear-gradient(90deg, $brazil-green 0%, $brazil-yellow  50%, $brazil-blue 100%);
+  background: #ccc;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+//________________end-toggle-button_____________
+#switch-container{
+  display:flex;
+  justify-content: center;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+#icon-container-on{
+  margin: auto 4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+#icon-container-off{
+  margin:auto 4px;
+  width: 40px;
+  height: 40px;
+  border-radius:100%;
+  filter: grayscale(1);
+}
+//modal-style
+.modal{
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: rgba(0,0,0,0.5);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+}
+.modal.show{
+  z-index:10;
+  opacity:1;
+  pointer-events: visible;
+}
+
+.modal-content{
+  width: 70%;
+  background-color: rgba(255,255,255,1);
+}
+.modal-head{
+  padding:20px;
+  display:flex;
+}
+.modal-footer{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.modal-title{
+  margin:0;
+  color: $american-red;
+}
+.modal-body{
+  padding: 20px;
+  height: 300px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  overflow: hidden scroll;
+}
+#close-icon{
+  color: $american-red;
+  padding: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  &:hover, :focus{
+    box-shadow: $box-shadow-hover
+  }
+}
+ul > favorites-list > li {
+  padding:5px;
+  font-size: 20px;
+}
+#wrapper{
+  background-color:inherit;
+}
