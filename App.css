@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+* {
+  font-family: Lato, sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  background: #333;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: inherit;
+  height: 100%;
+}
+
+#left-quote {
+  color: #333;
+  padding-right: 15px;
+}
+
+#root {
+  height: 1vh;
+}
+
+#signature {
+  display: flex;
+  position: relative;
+  text-align: center;
+  width: 200px;
+  margin: 50px auto;
+  color: rgb(51, 51, 51);
+  background-color: #fffcf9;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#sig {
+  padding: 5px;
+}
+
+#quote-box {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  vertical-align: middle;
+  margin: 10% 20%;
+}
+
+#quote-display {
+  background: #fffcf9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#buttons-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media screen and (max-width: 720px) {
+  #buttons-wrapper {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+}
+
+button {
+  padding: 0px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+
+#new-quote {
+  font-weight: 400px;
+  font-size: 15px;
+  padding: 15px;
+  color: #fffcf9;
+  background: #7A23FF;
+  border: none;
+  border-radius: 5px;
+  text-shadow: 1px 1px 0px rgb(51, 51, 51), 2px 2px 0px rgb(51, 51, 51);
+  margin-right: 10px;
+}
+#new-quote:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+@media only screen and (max-width: 720px) {
+  #new-quote {
+    margin-bottom: 20px;
+  }
+}
+
+@-webkit-keyframes pulse-twitter {
+  0% {
+    box-shadow: 0 0 0 0 #B1EDE8;
+  }
+}
+
+@keyframes pulse-twitter {
+  0% {
+    box-shadow: 0 0 0 0 #B1EDE8;
+  }
+}
+@-webkit-keyframes pulse-heart {
+  0% {
+    box-shadow: 0 0 0 0 #FF6978;
+  }
+}
+@keyframes pulse-heart {
+  0% {
+    box-shadow: 0 0 0 0 #FF6978;
+  }
+}
+#tweet-quote {
+  background: #B1EDE8;
+  border-radius: 5px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  padding: 4px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+#tweet-quote:hover, #tweet-quote :focus {
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+  -webkit-animation: pulse-twitter 1s;
+          animation: pulse-twitter 1s;
+}
+@media only screen and (max-width: 720px) {
+  #tweet-quote {
+    margin-bottom: 20px;
+  }
+}
+
+#favorite-button {
+  border: none;
+  background: #FF6978;
+  border-radius: 5px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  padding: 4px;
+}
+#favorite-button:hover, #favorite-button :focus {
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+  -webkit-animation: pulse-heart 1s;
+          animation: pulse-heart 1s;
+}
+@media only screen and (max-width: 720px) {
+  #favorite-button {
+    margin-bottom: 20px;
+  }
+}
+
+#show-modal {
+  border: none;
+  background: #6d435a;
+  border-radius: 5px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  padding: 4px;
+}
+#show-modal:hover, #show-modal :focus {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+@media only screen and (max-width: 720px) {
+  #show-modal {
+    margin-bottom: 20px;
+  }
+}
+
+#twitter-icon {
+  color: #fffcf9;
+  padding: 10px;
+}
+
+#favorite-icon {
+  color: #fffcf9;
+  padding: 10px;
+}
+
+#modal-icon {
+  color: #fffcf9;
+  padding: 10px;
+}
+
+.switch {
+  margin: auto 4px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(51, 51, 51);
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background: #ccc;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#switch-container {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+@media only screen and (max-width: 720px) {
+  #switch-container {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+
+#icon-container-on {
+  margin: auto 4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+#icon-container-off {
+  margin: auto 4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  filter: grayscale(1);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.modal.show {
+  z-index: 10;
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.modal-content {
+  width: 70%;
+  background-color: rgb(255, 255, 255);
+}
+
+.modal-head {
+  padding: 20px;
+  display: flex;
+}
+
+.modal-footer {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.modal-title {
+  margin: 0;
+  color: #FF6978;
+}
+
+.modal-body {
+  padding: 20px;
+  height: 300px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  overflow: hidden scroll;
+}
+
+#close-icon {
+  color: #FF6978;
+  padding: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+#close-icon:hover, #close-icon :focus {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+ul > favorites-list > li {
+  padding: 5px;
+  font-size: 20px;
+}
+
+#wrapper {
+  background-color: inherit;
+}/*# sourceMappingURL=App.css.map */
